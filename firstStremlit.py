@@ -1,11 +1,18 @@
 import streamlit as st
-"maki chut "
+
+# Set page config at the very beginning
+st.set_page_config(page_title="Kawach - Women's Self Defense", layout="wide")
+
+# Custom CSS for styling
 st.markdown("""
     <style>
         body {
-            margin: 0;
             font-family: Arial, Helvetica, sans-serif;
             background-color: #333333;
+            color: #FFFFFF;
+        }
+        .stApp {
+            padding-top: 20px;
         }
         .page-title {
             color: #FFFFFF;
@@ -18,7 +25,6 @@ st.markdown("""
             padding: 20px;
             margin-bottom: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            color: #FFFFFF;
         }
         .video-title, .weapon-title {
             font-size: 18px;
@@ -138,12 +144,14 @@ def self_defence_weapons():
     </div>
     """, unsafe_allow_html=True)
 
-# Sidebar navigation
-st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ["Self Defence Techniques", "Self Defence Weapons"])
+# Navigation based on URL query parameter
+query_params = st.query_params
+page = query_params.get("page", ["Self Defence Techniques"])[0]
 
 # Display the selected page
 if page == "Self Defence Techniques":
     self_defence_techniques()
 elif page == "Self Defence Weapons":
     self_defence_weapons()
+else:
+    st.write("Page not found. Use ?page=Self%20Defence%20Techniques or ?page=Self%20Defence%20Weapons in the URL.")
