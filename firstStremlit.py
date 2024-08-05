@@ -150,18 +150,15 @@ page = st.sidebar.radio("Go to", ["Self Defence Techniques", "Self Defence Weapo
 
 # Check URL parameters for default page
 query_params = st.query_params
-url_page = query_params.get("page", ["Self Defence Techniques"])[0]
+url_page = query_params.get("page", [None])[0]
 
-# Debugging
-st.write(f"URL Parameter: {url_page}")
-st.write(f"Sidebar Selection: {page}")
-
-# Determine which page to show
+# Determine which page to show based on URL parameters
 if url_page == "Self Defence Techniques":
     self_defence_techniques()
 elif url_page == "Self Defence Weapons":
     self_defence_weapons()
 else:
+    # Default to sidebar selection if URL parameter is missing or invalid
     if page == "Self Defence Techniques":
         self_defence_techniques()
     elif page == "Self Defence Weapons":
