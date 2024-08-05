@@ -152,6 +152,10 @@ page = st.sidebar.radio("Go to", ["Self Defence Techniques", "Self Defence Weapo
 query_params = st.query_params
 url_page = query_params.get("page", ["Self Defence Techniques"])[0]
 
+# Debugging
+st.write(f"URL Parameter: {url_page}")
+st.write(f"Sidebar Selection: {page}")
+
 # Determine which page to show
 if url_page == "Self Defence Techniques":
     self_defence_techniques()
