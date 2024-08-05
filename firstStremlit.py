@@ -1,6 +1,5 @@
 import streamlit as st
-
-# Custom CSS for a mobile app-like navigation bar and general styling
+"maki chut "
 st.markdown("""
     <style>
         body {
