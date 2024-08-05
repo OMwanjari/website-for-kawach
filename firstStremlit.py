@@ -153,9 +153,14 @@ query_params = st.query_params
 url_page = query_params.get("page", ["Self Defence Techniques"])[0]
 
 # Determine which page to show
-if url_page == "Self Defence Techniques" or page == "Self Defence Techniques":
+if url_page == "Self Defence Techniques":
     self_defence_techniques()
-elif url_page == "Self Defence Weapons" or page == "Self Defence Weapons":
+elif url_page == "Self Defence Weapons":
     self_defence_weapons()
 else:
-    st.write("Page not found. Use ?page=Self%20Defence%20Techniques or ?page=Self%20Defence%20Weapons in the URL.")
+    if page == "Self Defence Techniques":
+        self_defence_techniques()
+    elif page == "Self Defence Weapons":
+        self_defence_weapons()
+    else:
+        st.write("Page not found. Use ?page=Self%20Defence%20Techniques or ?page=Self%20Defence%20Weapons in the URL.")
