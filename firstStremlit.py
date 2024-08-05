@@ -144,14 +144,18 @@ def self_defence_weapons():
     </div>
     """, unsafe_allow_html=True)
 
-# Navigation based on URL query parameter
-query_params = st.query_params
-page = query_params.get("page", ["Self Defence Techniques"])[0]
+# Sidebar navigation
+st.sidebar.title("Navigation")
+page = st.sidebar.radio("Go to", ["Self Defence Techniques", "Self Defence Weapons"])
 
-# Display the selected page
-if page == "Self Defence Techniques":
+# Check URL parameters for default page
+query_params = st.query_params
+url_page = query_params.get("page", ["Self Defence Techniques"])[0]
+
+# Determine which page to show
+if url_page == "Self Defence Techniques" or page == "Self Defence Techniques":
     self_defence_techniques()
-elif page == "Self Defence Weapons":
+elif url_page == "Self Defence Weapons" or page == "Self Defence Weapons":
     self_defence_weapons()
 else:
     st.write("Page not found. Use ?page=Self%20Defence%20Techniques or ?page=Self%20Defence%20Weapons in the URL.")
