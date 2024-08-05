@@ -1,6 +1,6 @@
 import streamlit as st
 
-# Custom CSS for a responsive and beautiful mobile-friendly look
+# Custom CSS with white accents instead of pink
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
@@ -15,7 +15,7 @@ st.markdown("""
         padding: 10px;
     }
     h1 {
-        color: #FF69B4;
+        color: #FFFFFF;
         text-align: center;
         padding: 20px 0;
         font-size: 36px;
@@ -40,10 +40,10 @@ st.markdown("""
         font-size: 18px;
         font-weight: 500;
         margin-bottom: 15px;
-        color: #FF69B4;
+        color: #FFFFFF;
     }
     .resources-header {
-        color: #FF69B4;
+        color: #FFFFFF;
         padding: 25px 0 15px;
         font-size: 24px;
         font-weight: 700;
@@ -80,7 +80,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Main heading
-st.markdown("<h1>Kawach: Women's Self-Defense</h1>", unsafe_allow_html=True)
+st.markdown("<h1>Kawach</h1>", unsafe_allow_html=True)
 
 # Subheading
 st.markdown("<h2>Essential Self-Defense Techniques</h2>", unsafe_allow_html=True)
